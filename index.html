@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ICS Sentinel – Securing Industrial Control Systems</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background Grid Container */
+    /* .icon-grid {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 80px);
+      grid-auto-rows: 80px;
+      gap: 20px;
+      z-index: 0;
+      opacity: 0.08;
+      pointer-events: none;
+      padding: 40px;
+    } */
+    .icon-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, 80px);
+      grid-auto-rows: 80px;
+      gap: 20px;
+      z-index: 0;
+      opacity: 0.08;
+      pointer-events: none;
+      padding: 40px;
+    }
+
+    .icon-grid img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      filter: grayscale(100%);
+    }
+
+    /* Ensure content is above background */
+    header, main, footer {
+      position: relative;
+      z-index: 10;
+    }
+
+    .bg-pastel-green { background-color: #D5E5D5; }
+    .bg-pastel-pink { background-color: #fce4ec; }
+    .bg-pastel-yellow { background-color: #fff9c4; }
+    .bg-pastel-grey { background-color: #ADB2D4; }
+
+    section {
+      background-color: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(1px);
+
+      @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-4px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  .animate-delay-1 { animation-delay: 0.5s; }
+  .animate-delay-2 { animation-delay: 1.2s; }
+  .animate-delay-3 { animation-delay: 2s; }
+  .animate-delay-4 { animation-delay: 2.8s; }
+
+
+    }
+  </style>
+</head>
+
+<body class="text-gray-800 font-sans leading-relaxed">
+
+  <!-- ✅ ICON GRID BACKGROUND -->
+  <div class="icon-grid" id="iconGrid"></div>
+
+  <script>
+    // Icons to cycle through
+    const icons = [
+      "https://img.icons8.com/ios/50/206692/factory.png",
+      "https://img.icons8.com/ios/50/206692/gear.png",
+      "https://img.icons8.com/ios/50/206692/lock.png",
+      "https://img.icons8.com/ios/50/206692/shield.png",
+      "https://img.icons8.com/ios/50/206692/firewall.png",
+      "https://img.icons8.com/ios/50/206692/hacker.png"
+    ];
+
+    const grid = document.getElementById('iconGrid');
+
+    // Generate ~100 icons to fill screen space
+    for (let i = 0; i < 100; i++) {
+      const img = document.createElement('img');
+      img.src = icons[i % icons.length];
+      img.alt = "Background Icon";
+      grid.appendChild(img);
+    }
+  </script>
+
+  <!-- ✅ HEADER -->
+  <!-- <header class="bg-pastel-grey p-6 shadow-md">
+    <div class="max-w-5xl mx-auto text-center">
+      <h1 class="text-4xl font-bold text-gray-900">ICS Security in the Age of Industry 4.0</h1>
+      <!-- <p class="text-lg mt-2 text-gray-700">Securing the Future of Industrial Control Systems</p> -->
+    <!-- </div> -->
+  <!-- </header> -->
+  <header class="bg-pastel-grey py-6 md:py-5 shadow-md">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-4">
+
+    <!-- 🔻 Left Logo Placeholder -->
+    <div class="w-28 h-28 bg-white rounded-full shadow-md flex items-center justify-center">
+
+      <img src="images/ubc.png" alt="Left Logo" class="w-full h-full object-contain rounded-full">
+    </div>
+
+    <!-- 🔻 Center Title & Subtitle -->
+    <div class="text-center flex-1 px-4">
+      <h1 class="text-4xl font-bold text-gray-900">ICS Security in the Age of Industry 4.0</h1>
+    </div>
+
+    <!-- 🔻 Right Logo Placeholder -->
+    <div class="w-28 h-28 bg-white rounded-full shadow-md flex items-center justify-center">
+
+      <img src="images/ncc.png" alt="Right Logo" class="w-full h-full object-contain rounded-full">
+    </div>
+
+  </div>
+</header>
+
+
+  <!-- ✅ MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto p-6 space-y-12">
+
+    <!-- About -->
+    <section id="about" class="rounded-2xl p-6 shadow">
+      <!-- <h2 class="text-2xl font-semibold text-gray-800 mb-4">About the Project</h2> -->
+      <div class="grid grid-cols-[40%_55%] gap-6 items-center">
+        <div class="flex justify-center">
+          <img src="images/img1.png"
+               class="rounded-xl object-cover"
+               style="width: 90%;">
+        </div>
+        <div>
+          <p class="mt-0 text-justify" style="font-size:1vw">
+            Think about water treatment plants, power generation plants, manufacturing units and similar other industrial plants. 'ICS' stands for <b>Industrial Control System</b>, a <i>cyber-physical system</i> that controls the operations of these plants. </b><br/><br/>
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-[55%_42%] gap-6 items-center">
+        <div>
+          <p class="mt-0 text-justify" style="font-size:1vw">
+            Imagine waking up on a cold winter morning to find your heater not working. You walk into your kitchen to grab a glass of water, but find the taps running dry. You go to the supermarket to grab a block of cheese for your sandwich, but find all the dairy shelves empty. Sounds dystopian, right? Yet, thanks to recent cyberattacks on critical infrastructure, this isn’t science fiction anymore, <b>it’s already happening!</b>  </b><br/><br/>
+          </p>
+        </div>
+        <div class="flex justify-center">
+          <img src="images/img2.png"
+               class="rounded-xl object-cover"
+               style="width: 110%;">
+        </div>
+      </div>
+
+<div class="max-w-6xl mx-auto py-10 px-4">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+
+    <!-- Image 1 -->
+    <div>
+      <img src=images/attack1.png
+           class="w-full h-auto rounded-lg shadow-md">
+      <p class="mt-2 text-sm text-blue-700 underline">
+        <a href="https://attack.mitre.org/campaigns/C0034/" target="_blank">Sandstorm attack on Ukrainian power grids (2022)</a>
+      </p>
+    </div>
+
+    <!-- Image 2 -->
+    <div>
+      <img src=images/attack2.png
+           class="w-full h-auto rounded-lg shadow-md">
+      <p class="mt-2 text-sm text-blue-700 underline">
+        <a href="https://wisdiam.com/publications/recent-cyber-attacks-water-wastewater/" target="_blank">Texas water treatment plant attack (2024)</a>
+      </p>
+    </div>
+
+    <!-- Image 3 -->
+    <div>
+      <img src=images/attack3.png style="height: 93%;"
+           class="w-full h-auto rounded-lg shadow-md">
+      <p class="mt-2 text-sm text-blue-700 underline">
+        <a href="https://hackershub.com/incidents/schreiber-foods-cyberattack-impacting-dairy-supply-2021?utm_source=chatgpt.com" target="_blank">Schreiber Foods Cyberattack (2024)</a>
+      </p>
+    </div>
+
+  </div>
+  <!-- <div>
+    <p class="mt-0 text-justify" style="font-size:1vw">
+    <br/>These attacks disrupt ICS operations, leading to severe civilian inconvenience, cascading effects on downstream processes, operational downtime ranging from hours to weeks, and financial losses for plant owners that can reach upto millions of dollars.  </b><br/><br/>
+    </p>
+  </div> -->
+  <div class="grid grid-cols-1 gap-6 items-center">
+    <!-- <div class="flex justify-center">
+      <img src="images/img3.png"
+           class="rounded-xl object-cover"
+           style="width: 95%;">
+    </div> -->
+    <!-- <div><p><br/></p></div> -->
+    <div>
+      <p class="mt-0 text-justify" style="font-size:1vw">
+        <br/>These attacks disrupt ICS operations, leading to <b>severe civilian inconvenience</b>, potential <b>safety issues</b>, cascading effects on <b>downstream processes</b>, <b>operational downtime</b> ranging from hours to weeks, and <b>financial losses</b> for plant owners that can reach upto millions of dollars.  </b><br/>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="grid md:grid-cols-1 gap-6 items-center">
+  <div class="flex justify-center">
+    <img src="images/img4.png" style="width: 80%;"
+         class="rounded-xl object-cover">
+  </div>
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+    <!-- Team -->
+    <section id="team" class="bg-pastel-green p-6 rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">The Team</h2>
+      <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-8 text-center">
+        <div class="flex flex-col items-center">
+          <img src=images/aastha.jpg
+               class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
+          <h3 class="font-bold text-lg">Aastha Mehta</h3>
+          <p class="text-sm text-gray-700">Principal Investigator</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src=images/karthik.jpg
+               class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
+          <h3 class="font-bold text-lg">Karthik Pattabiraman</h3>
+          <p class="text-sm text-gray-700">Co - Principal Investigator</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://via.placeholder.com/150?text=Photo"
+               class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
+          <h3 class="font-bold text-lg">Gargi Mitra</h3>
+          <p class="text-sm text-gray-700">Postdoctoral Fellow</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <img src="https://via.placeholder.com/150?text=Photo"
+               class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
+          <h3 class="font-bold text-lg">Alain Zhiyanov</h3>
+          <p class="text-sm text-gray-700">Undergraduate Student</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <!-- <section id="publications" class="bg-white p-6 rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Publications</h2>
+      <ul class="list-disc list-inside space-y-2">
+        <li>
+          <em>ICS-Sniper: A Targeted Blackhole Attack on Encrypted ICS Traffic</em><br>
+          IEEE Transactions on Industrial Informatics, 2025 (to appear)
+        </li>
+        <li>
+          <em>Threat Modeling Internet-Connected SCADA Systems</em><br>
+          ACM AsiaCCS, 2024
+        </li>
+      </ul>
+    </section> -->
+
+    <!-- Contact -->
+    <section id="contact" class="bg-pastel-yellow p-6 rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact</h2>
+      <p>If you'd like to learn more or collaborate, feel free to reach out:</p>
+      <p class="mt-2">📧 <a href="mailto:ics-sentinel@researchlab.org" class="text-blue-700 underline">ics-sentinel@researchlab.org</a></p>
+    </section>
+
+  </main>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const icons = [
+        "https://img.icons8.com/ios/50/206692/factory.png",
+        "https://img.icons8.com/ios/50/206692/gear.png",
+        "https://img.icons8.com/ios/50/206692/lock.png",
+        "https://img.icons8.com/ios/50/206692/shield.png",
+        "https://img.icons8.com/ios/50/206692/firewall.png",
+        "https://img.icons8.com/ios/50/206692/hacker.png",
+        "https://img.icons8.com/ios/50/206692/cloud.png"
+      ];
+
+      const grid = document.getElementById('iconGrid');
+
+      function updateIconGridHeight() {
+        const docHeight = Math.max(
+          document.body.scrollHeight,
+          document.documentElement.scrollHeight
+        );
+        grid.style.height = `${docHeight}px`;
+
+        // Clear and repopulate
+        grid.innerHTML = '';
+        const columns = Math.ceil(window.innerWidth / 100);
+        const rows = Math.ceil(docHeight / 100);
+        const totalIcons = columns * rows;
+
+        for (let i = 0; i < totalIcons; i++) {
+          const img = document.createElement('img');
+          img.src = icons[i % icons.length];
+          img.alt = "Background Icon";
+          grid.appendChild(img);
+        }
+      }
+
+      // Initial render
+      updateIconGridHeight();
+
+      // Also update on window resize
+      window.addEventListener('resize', updateIconGridHeight);
+    });
+  </script>
+  <!-- ✅ FOOTER -->
+  <footer class="bg-gray-100 text-center text-sm p-4 mt-12 text-gray-600">
+    &copy; ICS-Sniper project. All rights reserved.
+  </footer>
+</body>
+</html>
