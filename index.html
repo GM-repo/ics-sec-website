@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ICS Sentinel – Securing Industrial Control Systems</title>
+  <title>Industry 4.0 and ICS Security</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
@@ -180,7 +180,7 @@
       <div class="grid grid-cols-[55%_42%] gap-6 items-center">
         <div>
           <p class="mt-0 text-justify" style="font-size:1vw">
-            Imagine waking up on a cold winter morning to find your heater not working. You walk into your kitchen to grab a glass of water, but find the taps running dry. You go to the supermarket to grab a block of cheese for your sandwich, but find all the dairy shelves empty. Sounds dystopian, right? Yet, thanks to recent cyberattacks on critical infrastructure, this isn’t science fiction anymore, <b>it’s already happening!</b>  </b><br/><br/>
+            Imagine waking up on a cold winter morning to find your heater not working. You walk into your kitchen to grab a glass of water, but find the taps running dry. You go to the supermarket to grab a block of cheese for your sandwich, but find all the dairy shelves empty. Sounds dystopian, right? Yet, thanks to recent cyberattacks on critical infrastructure, this isn’t science fiction anymore. IT'S ALREADY HAPPENING! <br/> Remember the <a href="https://attack.mitre.org/campaigns/C0034/" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">Sandstorm attack on Ukrainian power grids in 2022</a>,   <a href="https://wisdiam.com/publications/recent-cyber-attacks-water-wastewater/" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">Texas water treatment plant attack in 2024</a>, or the <a href="https://hackershub.com/incidents/schreiber-foods-cyberattack-impacting-dairy-supply-2021" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer"> Scheriber Foods cyberattack in 2024 </a>? These attacks disrupt ICS operations, leading to <b>severe civilian inconvenience</b>, potential <b>safety issues</b>, cascading effects on <b>downstream processes</b>, <b>operational downtime</b> ranging from hours to weeks, and <b>financial losses</b> for plant owners that can reach upto millions of dollars. What's more concerning is that <b>all these attacks have been executed remotely, sometimes from as far as across the globe!</b>
           </p>
         </div>
         <div class="flex justify-center">
@@ -191,68 +191,100 @@
       </div>
 
 <div class="max-w-6xl mx-auto py-10 px-4">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
 
-    <!-- Image 1 -->
-    <div>
-      <img src=images/attack1.png
-           class="w-full h-auto rounded-lg shadow-md">
-      <p class="mt-2 text-sm text-blue-700 underline">
-        <a href="https://attack.mitre.org/campaigns/C0034/" target="_blank">Sandstorm attack on Ukrainian power grids (2022)</a>
-      </p>
-    </div>
-
-    <!-- Image 2 -->
-    <div>
-      <img src=images/attack2.png
-           class="w-full h-auto rounded-lg shadow-md">
-      <p class="mt-2 text-sm text-blue-700 underline">
-        <a href="https://wisdiam.com/publications/recent-cyber-attacks-water-wastewater/" target="_blank">Texas water treatment plant attack (2024)</a>
-      </p>
-    </div>
-
-    <!-- Image 3 -->
-    <div>
-      <img src=images/attack3.png style="height: 93%;"
-           class="w-full h-auto rounded-lg shadow-md">
-      <p class="mt-2 text-sm text-blue-700 underline">
-        <a href="https://hackershub.com/incidents/schreiber-foods-cyberattack-impacting-dairy-supply-2021?utm_source=chatgpt.com" target="_blank">Schreiber Foods Cyberattack (2024)</a>
-      </p>
-    </div>
-
-  </div>
   <!-- <div>
     <p class="mt-0 text-justify" style="font-size:1vw">
     <br/>These attacks disrupt ICS operations, leading to severe civilian inconvenience, cascading effects on downstream processes, operational downtime ranging from hours to weeks, and financial losses for plant owners that can reach upto millions of dollars.  </b><br/><br/>
     </p>
   </div> -->
-  <div class="grid grid-cols-1 gap-6 items-center">
+  <!-- <div class="grid grid-cols-1 gap-6 items-center">
     <!-- <div class="flex justify-center">
       <img src="images/img3.png"
            class="rounded-xl object-cover"
            style="width: 95%;">
     </div> -->
     <!-- <div><p><br/></p></div> -->
-    <div>
+    <!-- <div>
       <p class="mt-0 text-justify" style="font-size:1vw">
         <br/>These attacks disrupt ICS operations, leading to <b>severe civilian inconvenience</b>, potential <b>safety issues</b>, cascading effects on <b>downstream processes</b>, <b>operational downtime</b> ranging from hours to weeks, and <b>financial losses</b> for plant owners that can reach upto millions of dollars.  </b><br/>
       </p>
-    </div>
-  </div>
+    </div> -->
+  <!-- </div> -->
 </div>
 
 <div class="grid md:grid-cols-1 gap-6 items-center">
+  <div class="flex justify-left">
+    <img src="images/img4.png" style="width: 75%;"
+         class="rounded-xl object-cover">
+  </div>
+  <div>
+    <p class="mt-0 text-justify" style="font-size:1vw">
+      That's true! While a section of the ICS security community keeps working on mitigating existing threats, in this project, we focus on identifying and mitigating <b><i>emerging</i> security threats in Industry 4.0</b>. To be specific, we focus on <b>Denial of Service attacks</b> -- one of the most popular and notorious attacks known in the ICS domain.  </b><br/><br/>
+    </p>
+  </div>
+  <div class="flex justify-end">
+    <img src="images/img6.png" style="width: 55%;"
+         class="rounded-xl object-cover align:right">
+  </div>
+  <div>
+    <p class="mt-0 text-justify" style="font-size:1vw">
+      Industry 4.0 refers to the Fourth Industrial Revolution, which integrates advanced technologies like IoT, AI, Internet connectivity, and high degrees of automation into manufacturing and industrial processes. It enables smart, interconnected systems that can be monitored and controlled remotely, analyzed, and optimized in real time, leading to greater efficiency, flexibility, and resilience. This also enables scaling up industrial operations. Have you seen the <a href="https://www.lrqa.com/en-us/case-studies/quality-inspection-worlds-largest-wastewater-plant/" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">new water treatment plant of Mexico City</a>? </b><br/>
+    </p>
+  </div>
   <div class="flex justify-center">
-    <img src="images/img4.png" style="width: 80%;"
+    <img src="images/mexico.jpeg" style="width: 55%;"
+         class="rounded-xl object-cover align:right">
+  </div>
+  <div class="flex">
+    <img src="images/img7.png" style="width: 85%;"
          class="rounded-xl object-cover">
   </div>
 </div>
+<div class="grid grid-cols-[55%_42%] gap-6 items-center">
+  <div>
+    <p class="mt-0 text-justify" style="font-size:1vw">
+      <br/> In short, these modern plants have a <b>higher degree of Internet connectivity in their critical infrastructure</b> that makes them significantly more vulnerable to remotely executed attacks as compared to their traditional counterparts. <br/>
+      To understand this clearly, let's take a deeper look into the ICS network architecture. An ICS comprises two networks - an Information Technology (IT) network, and an Operational Technology (OT) network. The IT network is used for business operations, while it's the OT network that's responsible for connecting the critical cyber-physical devices that executes the industrial process (e.g., water treatment). <br/> Traditionally, only the IT network used to be connected to the Internet, while the OT components used to be connected over a private network. The IT and OT network were also connected over a private network. This made the OT network relatively secure to remote adversaries, as they had to infiltrate the OT network through the IT network, and fortifying the IT network was enough to prevent OT invasions. But to facilitate scalability of operations and remote monitoring and control, <b>some critical OT components are now being migrated to the cloud</b>. This includes the Supervisory Control and Data Acquisition System (SCADA), which is responsible for coordinating among and synchronizing the operations of various remotely located OT components. This means <b>the communications between the SCADA and other OT components are now transmitted over the Internet, making them exposed to remote adversaries</b>. <br/><br/>
+    </p>
+  </div>
+  <div class="flex justify-center">
+    <img src="images/img8.png"
+         class="rounded-xl object-cover"
+         style="width: 110%;">
+  </div>
+</div>
+<div class="grid md:grid-cols-1 gap-6 items-center">
+  <div class="flex justify-center">
+    <img src="images/img9.png" style="width: 65%;"
+         class="rounded-xl object-cover">
+  </div>
+  <div>
+    <p class="mt-0 text-justify" style="font-size:1vw">
+      We set out to explore a simple but important question: <b>Is Internet-borne OT traffic vulnerable to remotely executed Denial of Service (DoS) attacks?</b> Unlike IT traffic, OT traffic is extremely time- and safety-critical. Delayed or dropped packets in an ICS OT system isn't just inconvenient, it can be dangerous. That’s why plant operators take cybersecurity seriously. Following NIST guidelines, they implement encryption, VPNs, volumetric DoS detection, and even network delay tolerance techniques to handle benign Internet latency and packet loss. But as we dug deeper, a question kept nagging us: <i>Is all this really enough?</i> In an attempt to find an answer, we did the following.<br/><br/>
+    </p>
+    <ol class="mt-0 text-justify" style="font-size:1vw">
+    <li><b>First</b>, we needed a realistic testbed to investigate the security of Internet-borne OT traffic. In absence of such a state-of-the-art testbed, we built our own <span class="text-blue-600 font-semibold">in-house testbed</span>. It mimics a 6-stage water treatment plant, similar to the physical one hosted at SUTD Singapore, except that the SCADA is now hosted on the cloud, and it incorporates state-of-the-art security measures.<br/><br/></li>
+    <li><b>Second</b>, we studied the characteristics of OT traffic and investigated its susceptibility to DoS attacks. We found that while the state-of-the-art ICS security measures thwart known DoS attacks, <i><u>OT communications are vulnerable to a novel targeted DoS attack</u></i>. We built a prototype of this attack and named it <span class="text-blue-600 font-semibold">ICS-Sniper</span>. This is concerning as ICS-Sniper can be executed from outside of the ICS perimeter, by remote adversaries, and can potentially break the synchorization among its mechanical components, thereby disrupting ICS operations. Much like a sniper attack, it is highly precise and undetectable.<br/></li>
+  </ol>
+  </div>
+  <div>
 
+    <div class="grid grid-cols-[75%_22%] gap-6 items-center">
+      <div>
+        <p class="mt-0 text-justify text-blue-600 " style="font-size:1vw">
+          As we continue exploring the full potential of ICS-Sniper by testing it across diverse scenarios and developing practical countermeasures, we are also committed to raising awareness about this emerging threat within the ICS security community. We presented ICS-Sniper at the 2nd International Workshop on Re-design Industrial Control Systems with Security (RICSS) in 2024, hosted by the ACM CCS conference. We were also recently awarded a research funding by the National Cybersecurity Consortium (NCC) of Canada. <span class="bg-yellow-200 font-semibold px-1">We will be talking about the current state of our work at the NCC Conference in Banff on June 26 and 27, 2025.</span> <br/><br/>
 
+  To deepen our understanding and ground our research in real-world contexts, we are actively seeking collaboration with industries operating safety-critical infrastructure. Your insights into network architecture, operational constraints, and security priorities can help shape stronger, more resilient defenses for the future. <br/><br/>
 
-
-
-
+  <span class="font-semibold">Interested in working with us? Reach out to the Project Investigators. We would love to start the conversation.</span> <br/><br/>
+        </p>
+      </div>
+      <div class="flex justify-center">
+        <img src="images/ics-sniper.png"
+             class="rounded-xl object-cover"
+             style="width: 85%;">
+      </div>
+    </div>
 
 </section>
 
@@ -266,25 +298,33 @@
           <img src=images/aastha.jpg
                class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
           <h3 class="font-bold text-lg">Aastha Mehta</h3>
-          <p class="text-sm text-gray-700">Principal Investigator</p>
+          <p class="text-sm text-gray-700 font-semibold">Principal Investigator</p>
+          <p class="text-sm text-gray-700">Assistant Professor @ UBC CS</p>
+          <p class="text-sm text-gray-700">Email:<a href="mailto:aasthakm@cs.ubc.ca"><u>aasthakm [at] cs [dot] ubc [dot] ca</u></a></p>
         </div>
         <div class="flex flex-col items-center">
           <img src=images/karthik.jpg
                class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
           <h3 class="font-bold text-lg">Karthik Pattabiraman</h3>
-          <p class="text-sm text-gray-700">Co - Principal Investigator</p>
+          <p class="text-sm text-gray-700 font-semibold">Co-Principal Investigator</p>
+          <p class="text-sm text-gray-700">Professor @ UBC ECE</p>
+          <p class="text-sm text-gray-700">Email: <a href="mailto:karthikp@ece.ubc.ca"><u>karthikp [at] ece [dot] ubc [dot] ca</u></a></p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://via.placeholder.com/150?text=Photo"
+          <img src=images/gargi.jpg
                class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
           <h3 class="font-bold text-lg">Gargi Mitra</h3>
-          <p class="text-sm text-gray-700">Postdoctoral Fellow</p>
+          <p class="text-sm text-gray-700 font-semibold">Research Staff</p>
+          <p class="text-sm text-gray-700">Postdoctoral Fellow @ UBC ECE</p>
+          <p class="text-sm text-gray-700">Email: <a href="mailto:gargi@ece.ubc.ca"><u>gargi [at] ece [dot] ubc [dot] ca</u></a></p>
         </div>
         <div class="flex flex-col items-center">
-          <img src="https://via.placeholder.com/150?text=Photo"
+          <img src=images/alain.jpeg
                class="w-32 h-32 rectangular-full shadow-md mb-3 object-cover">
           <h3 class="font-bold text-lg">Alain Zhiyanov</h3>
-          <p class="text-sm text-gray-700">Undergraduate Student</p>
+          <p class="text-sm text-gray-700 font-semibold">Research Intern</p>
+          <p class="text-sm text-gray-700">Undergraduate Student @ UBC CS</p>
+          <p class="text-sm text-gray-700">Email: <a href="mailto:alainzhiyanov@gmail.com"><u>alainzhiyanov [at] gmail [dot] com</u></a></p>
         </div>
       </div>
     </section>
@@ -305,11 +345,11 @@
     </section> -->
 
     <!-- Contact -->
-    <section id="contact" class="bg-pastel-yellow p-6 rounded-2xl shadow">
+    <!-- <section id="contact" class="bg-pastel-yellow p-6 rounded-2xl shadow">
       <h2 class="text-2xl font-semibold text-gray-800 mb-4">Contact</h2>
       <p>If you'd like to learn more or collaborate, feel free to reach out:</p>
       <p class="mt-2">📧 <a href="mailto:ics-sentinel@researchlab.org" class="text-blue-700 underline">ics-sentinel@researchlab.org</a></p>
-    </section>
+    </section> -->
 
   </main>
   <script>
